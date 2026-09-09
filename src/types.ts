@@ -27,6 +27,7 @@ export interface SiteTranslation {
     program: string;
     whyMe: string;
     bookCall: string;
+    platform: string;
   };
   hero: {
     badge: string;

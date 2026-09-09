@@ -14,7 +14,9 @@ import {
   BookOpen,
   Calculator,
   User,
-  Briefcase
+  Briefcase,
+  ExternalLink,
+  Laptop
 } from 'lucide-react';
 import { SITE_CONFIG } from '../config/site';
 
@@ -233,6 +235,19 @@ export const Navbar: React.FC<NavbarProps> = ({
               )}
             </button>
 
+            {/* Coaching Platform Button */}
+            <a
+              href={SITE_CONFIG.platformUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="h-9 px-3 rounded-lg border border-amber-500/40 bg-amber-500/10 hover:bg-amber-500/20 text-slate-900 dark:text-amber-300 font-bold text-xs transition-all flex items-center gap-1.5 shadow-2xs hover:scale-[1.02] active:scale-[0.98]"
+              title={isRtl ? "منصة الكوتشينغ AirNest" : "AirNest Coaching Platform"}
+            >
+              <Laptop className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400 shrink-0" />
+              <span>{t.nav.platform}</span>
+              <ExternalLink className="w-3 h-3 opacity-60 shrink-0" />
+            </a>
+
             {/* Primary Action Button */}
             <button
               onClick={onOpenBooking}
@@ -337,6 +352,18 @@ export const Navbar: React.FC<NavbarProps> = ({
               </Link>
             </div>
           </div>
+
+          {/* Mobile Platform CTA */}
+          <a
+            href={SITE_CONFIG.platformUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full py-3 px-4 rounded-xl border border-amber-500/30 bg-amber-500/10 dark:bg-amber-500/15 hover:bg-amber-500/20 text-slate-900 dark:text-amber-200 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all shadow-xs"
+          >
+            <Laptop className="w-4 h-4 text-amber-600 dark:text-amber-400" />
+            <span>{isRtl ? "دخول منصة الكوتشينغ (AirNest)" : "AirNest Coaching Platform"}</span>
+            <ExternalLink className="w-3.5 h-3.5 opacity-70" />
+          </a>
 
           {/* Mobile CTA */}
           <button

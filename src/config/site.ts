@@ -24,6 +24,7 @@ export const SITE_CONFIG = {
     whatsapp: "https://wa.me/212655845060",
     linkedin: "https://www.linkedin.com/in/hicham-idali",
   },
+  platformUrl: "https://coaching.airnest.online/",
   primaryNav: [
     { label: "E-Commerce", href: "/ecommerce/", description: "Core business models, unit economics, and store infrastructure" },
     { label: "Dropshipping", href: "/dropshipping/", description: "Supplier vetting, product research, and global fulfillment" },

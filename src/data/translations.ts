@@ -10,6 +10,7 @@ export const TRANSLATIONS: Record<Language, SiteTranslation> = {
       program: 'برنامج المواكبة',
       whyMe: 'لماذا نحن؟',
       bookCall: 'احجز مكالمتك الاستكشافية',
+      platform: 'منصة الكوتشينغ',
     },
     hero: {
       badge: 'برنامج المواكبة الفردية 1-on-1 لأصحاب المتاجر الإلكترونية',
@@ -173,6 +174,7 @@ export const TRANSLATIONS: Record<Language, SiteTranslation> = {
       program: 'Coaching Program',
       whyMe: 'Why Work With Me',
       bookCall: 'Book Discovery Call',
+      platform: 'Coaching Platform',
     },
     hero: {
       badge: '1-on-1 Private Mentorship for E-Commerce Store Owners',

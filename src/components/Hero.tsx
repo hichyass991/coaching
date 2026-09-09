@@ -7,7 +7,9 @@ import {
   ShieldCheck, 
   Star, 
   Sparkles, 
-  MessageCircle
+  MessageCircle,
+  Laptop,
+  ExternalLink
 } from 'lucide-react';
 
 interface HeroProps {
@@ -105,6 +107,19 @@ export const Hero: React.FC<HeroProps> = ({
                 <span>{t.hero.ctaPrimary}</span>
                 <ArrowIcon className="w-5 h-5 stroke-[2.5] group-hover:translate-x-[-3px] transition-transform" />
               </button>
+
+              {/* Platform Button */}
+              <a
+                href="https://coaching.airnest.online/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white dark:bg-amber-500/15 dark:hover:bg-amber-500/25 dark:text-amber-200 font-bold text-xs sm:text-sm border border-slate-800 dark:border-amber-500/30 shadow-md hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 cursor-pointer"
+                title="AirNest Coaching Platform"
+              >
+                <Laptop className="w-4 h-4 text-amber-400 shrink-0" />
+                <span>{isRtl ? "دخول منصة الكوتشينغ (AirNest)" : "AirNest Coaching Platform"}</span>
+                <ExternalLink className="w-4 h-4 opacity-70 shrink-0" />
+              </a>
 
               {/* Secondary Button */}
               <button

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Language, SiteTranslation } from '../types';
-import { MessageCircle, Mail, Phone, ShieldCheck, ArrowRight, Globe } from 'lucide-react';
+import { MessageCircle, Mail, Phone, ShieldCheck, ArrowRight, Globe, ExternalLink, Laptop } from 'lucide-react';
 import { SITE_CONFIG } from '../config/site';
 
 interface FooterProps {
@@ -110,6 +110,18 @@ export const Footer: React.FC<FooterProps> = ({
                 <Link to="/blog/" className="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">
                   {isRtl ? "البحوث والمقالات" : "Industry Research"}
                 </Link>
+              </li>
+              <li>
+                <a
+                  href={SITE_CONFIG.platformUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-amber-600 dark:text-amber-400 font-bold hover:underline"
+                >
+                  <Laptop className="w-3.5 h-3.5" />
+                  <span>{isRtl ? "منصة الكوتشينغ (AirNest)" : "AirNest Coaching Platform"}</span>
+                  <ExternalLink className="w-3 h-3 opacity-75" />
+                </a>
               </li>
               <li>
                 <Link to="/consulting/" className="text-amber-600 dark:text-amber-400 font-bold hover:underline">
