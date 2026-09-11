@@ -88,7 +88,7 @@ export const CoachingProgramSection: React.FC<CoachingProgramSectionProps> = ({
                 {/* Deliverables Checklist */}
                 <div className="pt-2 space-y-2.5">
                   <span className="text-xs font-bold text-slate-700 dark:text-slate-200 block">
-                    المخرجات التطبيقية لهذا المحور:
+                    {isRtl ? "المخرجات التطبيقية لهذا المحور:" : "Practical Deliverables for this Module:"}
                   </span>
                   <ul className="space-y-2 text-xs text-slate-700 dark:text-slate-300">
                     {mod.deliverables.map((deliv, i) => (
@@ -102,7 +102,7 @@ export const CoachingProgramSection: React.FC<CoachingProgramSectionProps> = ({
               </div>
 
               <div className="pt-4 border-t border-slate-200 dark:border-slate-800 text-xs font-semibold text-amber-800 dark:text-amber-400 flex items-center justify-between">
-                <span>تطبيق ومراجعة مباشرة في حسابك</span>
+                <span>{isRtl ? "تطبيق ومراجعة مباشرة في حسابك" : "Live audit & execution in your accounts"}</span>
                 <span className="font-mono font-bold">1-on-1 Mentorship</span>
               </div>
             </div>
@@ -141,7 +141,9 @@ export const CoachingProgramSection: React.FC<CoachingProgramSectionProps> = ({
               <ArrowIcon className="w-5 h-5 stroke-[2.5]" />
             </button>
             <p className="text-xs text-slate-500 dark:text-slate-400 font-medium mt-2">
-              ⚡ متبقي مقعدين فقط لهذا الشهر للحفاظ على المتابعة الشخصية المكثفة
+              {isRtl 
+                ? "⚡ متبقي مقعدين فقط لهذا الشهر للحفاظ على المتابعة الشخصية المكثفة" 
+                : "⚡ Only 2 mentorship seats remaining this month to ensure intensive individual focus"}
             </p>
           </div>
         </div>

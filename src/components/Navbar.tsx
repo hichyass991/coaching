@@ -108,7 +108,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 {t.nav.brandName}
               </span>
               <span className="text-[10px] font-semibold text-amber-600 dark:text-amber-400 leading-tight">
-                E-Commerce & Dropshipping Authority
+                {t.nav.brandRole}
               </span>
             </div>
           </Link>

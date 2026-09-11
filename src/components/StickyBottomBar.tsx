@@ -54,11 +54,11 @@ export const StickyBottomBar: React.FC<StickyBottomBarProps> = ({
           <button
             onClick={handleOpenWhatsApp}
             className="px-4 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm shadow-md shadow-emerald-600/20 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-1.5 cursor-pointer shrink-0"
-            title="تواصل مباشر عبر الواتساب"
+            title={isRtl ? "تواصل مباشر عبر الواتساب" : "Direct WhatsApp Contact"}
           >
             <MessageCircle className="w-4 h-4 fill-white" />
             <span className="hidden sm:inline">{t.stickyBar.waCta}</span>
-            <span className="sm:hidden">واتساب 💬</span>
+            <span className="sm:hidden">{isRtl ? "واتساب 💬" : "WhatsApp 💬"}</span>
           </button>
 
         </div>

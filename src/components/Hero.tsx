@@ -11,6 +11,7 @@ import {
   Laptop,
   ExternalLink
 } from 'lucide-react';
+import { SITE_CONFIG } from '../config/site';
 
 interface HeroProps {
   currentLang: Language;
@@ -79,19 +80,27 @@ export const Hero: React.FC<HeroProps> = ({
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs sm:text-sm text-start max-w-xl mx-auto">
             <div className="flex items-center gap-2.5">
               <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
-              <span className="text-slate-700 dark:text-slate-200 font-semibold">اختيار وتأكيد المنتجات المربحة (Winning Products)</span>
+              <span className="text-slate-700 dark:text-slate-200 font-semibold">
+                {isRtl ? "اختيار وتأكيد المنتجات المربحة (Winning Products)" : "Data-driven Winning Product Selection & Testing"}
+              </span>
             </div>
             <div className="flex items-center gap-2.5">
               <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
-              <span className="text-slate-700 dark:text-slate-200 font-semibold">إعلانات فيسبوك وتيك توك بهوامش ربح صافية</span>
+              <span className="text-slate-700 dark:text-slate-200 font-semibold">
+                {isRtl ? "إعلانات فيسبوك وتيك توك بهوامش ربح صافية" : "Meta & TikTok Ads with Sustainable Net Margins"}
+              </span>
             </div>
             <div className="flex items-center gap-2.5">
               <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
-              <span className="text-slate-700 dark:text-slate-200 font-semibold">بروتوكول محاربة الروتور ورفع نسبة التسليم فوق 80%</span>
+              <span className="text-slate-700 dark:text-slate-200 font-semibold">
+                {isRtl ? "بروتوكول محاربة الروتور ورفع نسبة التسليم فوق 80%" : "RTO Defense Protocol & 80%+ Delivery Rate"}
+              </span>
             </div>
             <div className="flex items-center gap-2.5">
               <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
-              <span className="text-slate-700 dark:text-slate-200 font-semibold">متابعة يومية عبر الواتساب وجلسات تدقيق أسبوعية</span>
+              <span className="text-slate-700 dark:text-slate-200 font-semibold">
+                {isRtl ? "متابعة يومية عبر الواتساب وجلسات تدقيق أسبوعية" : "Daily WhatsApp Support & Weekly Live Audits"}
+              </span>
             </div>
           </div>
 
@@ -110,11 +119,11 @@ export const Hero: React.FC<HeroProps> = ({
 
               {/* Platform Button */}
               <a
-                href="https://coaching.airnest.online/"
+                href={SITE_CONFIG.platformUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white dark:bg-amber-500/15 dark:hover:bg-amber-500/25 dark:text-amber-200 font-bold text-xs sm:text-sm border border-slate-800 dark:border-amber-500/30 shadow-md hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 cursor-pointer"
-                title="AirNest Coaching Platform"
+                title={isRtl ? "منصة الكوتشينغ AirNest" : "AirNest Coaching Platform"}
               >
                 <Laptop className="w-4 h-4 text-amber-400 shrink-0" />
                 <span>{isRtl ? "دخول منصة الكوتشينغ (AirNest)" : "AirNest Coaching Platform"}</span>
@@ -137,7 +146,7 @@ export const Hero: React.FC<HeroProps> = ({
                 className="text-xs text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 font-bold inline-flex items-center gap-1.5 py-1 px-3 rounded-lg hover:bg-emerald-50 dark:hover:bg-emerald-950/40 transition-colors cursor-pointer"
               >
                 <MessageCircle className="w-4 h-4 fill-emerald-600 dark:fill-emerald-500 text-emerald-600 dark:text-emerald-500" />
-                <span>تواصل معايا مباشرة عبر الواتساب (0655845060) 💬</span>
+                <span>{isRtl ? "تواصل معايا مباشرة عبر الواتساب (0655845060) 💬" : "Direct WhatsApp Inquiries (+212 655-845060) 💬"}</span>
               </button>
             </div>
           </div>

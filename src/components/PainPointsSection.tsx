@@ -85,7 +85,9 @@ export const PainPointsSection: React.FC<PainPointsProps> = ({
 
               {/* Consequence (The Pain) */}
               <div className="p-3.5 rounded-xl bg-red-50/70 dark:bg-red-950/30 border border-red-200 dark:border-red-900/50 text-xs text-red-900 dark:text-red-200 font-medium leading-relaxed">
-                <strong className="block mb-1 text-red-700 dark:text-red-400">⚠️ النتيجة الملموسة:</strong>
+                <strong className="block mb-1 text-red-700 dark:text-red-400">
+                  {isRtl ? "⚠️ النتيجة الملموسة:" : "⚠️ Measurable Impact:"}
+                </strong>
                 {item.consequence}
               </div>
 
@@ -93,7 +95,7 @@ export const PainPointsSection: React.FC<PainPointsProps> = ({
               <div className="p-3.5 rounded-xl bg-emerald-50/70 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-900/50 text-xs text-emerald-950 dark:text-emerald-200 leading-relaxed">
                 <strong className="block mb-1 text-emerald-700 dark:text-emerald-400 flex items-center gap-1.5 font-bold">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-                  الحل العملي في برنامج المواكبة:
+                  {isRtl ? "الحل العملي في برنامج المواكبة:" : "Actionable Coaching Solution:"}
                 </strong>
                 {item.solution}
               </div>
@@ -104,7 +106,9 @@ export const PainPointsSection: React.FC<PainPointsProps> = ({
         {/* Bridge Box & Call To Action */}
         <div className="p-8 sm:p-10 rounded-2xl bg-white dark:bg-slate-900 border border-amber-300 dark:border-amber-500/40 shadow-md text-center max-w-4xl mx-auto space-y-6">
           <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
-            الحل ليس مجرد دورة نظرية أخرى، بل مواكبة استراتيجية داخل حسابك ومتجرك
+            {isRtl 
+              ? "الحل ليس مجرد دورة نظرية أخرى، بل مواكبة استراتيجية داخل حسابك ومتجرك" 
+              : "Not Another Generic Course — Dedicated 1-on-1 Implementation in Your Accounts"}
           </h3>
           <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto font-medium">
             {t.painPoints.bridgeText}

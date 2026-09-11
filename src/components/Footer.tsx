@@ -47,12 +47,14 @@ export const Footer: React.FC<FooterProps> = ({
             </Link>
 
             <p className="text-slate-600 dark:text-slate-400 leading-relaxed max-w-sm">
-              Empirical operating frameworks for direct-to-consumer e-commerce, algorithmic media buying, and cash on delivery logistics across international markets.
+              {isRtl 
+                ? "أطر عمل تشغيلية مبنية على الممارسة للتجارة الإلكترونية المباشرة للمستهلك، وإدارة الحملات الإعلانية، ولوجستيك الدفع عند الاستلام."
+                : "Empirical operating frameworks for direct-to-consumer e-commerce, algorithmic media buying, and cash on delivery logistics across international markets."}
             </p>
 
             <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 font-bold">
               <ShieldCheck className="w-4 h-4" />
-              <span>Practitioner-tested operational methodology</span>
+              <span>{isRtl ? "منهجية تشغيلية مجربة ومبنية على الميدان" : "Practitioner-tested operational methodology"}</span>
             </div>
           </div>
 
@@ -170,7 +172,9 @@ export const Footer: React.FC<FooterProps> = ({
                 </a>
               </li>
               <li className="text-slate-500 dark:text-slate-400 pt-1 leading-relaxed">
-                Global direct-to-consumer advisory with specialized regional expertise in North Africa & GCC ecosystems.
+                {isRtl
+                  ? "استشارات التجارة الإلكترونية المباشرة مع خبرة إقليمية متخصصة في شمال إفريقيا والخليج العربي."
+                  : "Global direct-to-consumer advisory with specialized regional expertise in North Africa & GCC ecosystems."}
               </li>
             </ul>
           </div>
@@ -179,11 +183,11 @@ export const Footer: React.FC<FooterProps> = ({
 
         {/* Bottom Copyright & Canonical Notice */}
         <div className="pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500 dark:text-slate-400">
-          <p>© {new Date().getFullYear()} {SITE_CONFIG.shortName}. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} {SITE_CONFIG.shortName}. {isRtl ? "جميع الحقوق محفوظة." : "All rights reserved."}</p>
           <div className="flex items-center gap-4">
-            <Link to="/about/" className="hover:underline">Editorial Policy</Link>
-            <Link to="/consulting/" className="hover:underline">Advisory Terms</Link>
-            <Link to="/" className="hover:underline">Home</Link>
+            <Link to="/about/" className="hover:underline">{isRtl ? "المعايير التحريرية" : "Editorial Policy"}</Link>
+            <Link to="/consulting/" className="hover:underline">{isRtl ? "شروط الاستشارة" : "Advisory Terms"}</Link>
+            <Link to="/" className="hover:underline">{isRtl ? "الرئيسية" : "Home"}</Link>
           </div>
         </div>
 

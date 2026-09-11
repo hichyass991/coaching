@@ -39,42 +39,42 @@ export const HomePage: React.FC<HomePageProps> = ({
       desc: isRtl ? "أسس بناء المتاجر، نماذج الأعمال، وسلاسل الإمداد مع ضبط دقيق لهوامش الربح الصافية." : "Store infrastructure, business models, supply chains, and mathematical contribution margins.",
       path: "/ecommerce/",
       icon: Boxes,
-      badge: "Core Architecture"
+      badge: isRtl ? "البنية الأساسية" : "Core Architecture"
     },
     {
       title: isRtl ? "الدروبشيبينغ والبحث عن المنتجات (Dropshipping Operations)" : "Dropshipping Operations & Validation",
       desc: isRtl ? "معايير فحص المنتجات الرابحة، التعامل مع وكلاء الشحن (Agents)، والانتقال إلى براند مستدام." : "Data-driven product validation, direct agent sourcing from 1688, and scaling to private label.",
       path: "/dropshipping/",
       icon: PackageSearch,
-      badge: "Validation & Sourcing"
+      badge: isRtl ? "البحث والتوريد" : "Validation & Sourcing"
     },
     {
       title: isRtl ? "الإعلانات الممولة وميديا بايينغ (Paid Media Performance)" : "Paid Media: Meta Ads & TikTok Spark Ads",
       desc: isRtl ? "استراتيجيات إعلانات TikTok و Meta، صناعة الـ UGC، والتحكم في تكلفة الاقتناء (CPA)." : "Broad targeting, algorithmic creative testing, UGC hook frameworks, and ROAS preservation.",
       path: "/paid-media/",
       icon: Flame,
-      badge: "Traffic & Media Buying"
+      badge: isRtl ? "الإعلانات والميديا" : "Traffic & Media Buying"
     },
     {
       title: isRtl ? "الدفع عند الاستلام واللوجستيك (Cash On Delivery)" : "Cash On Delivery (COD) Ecosystems",
       desc: isRtl ? "إدارة الكول سنتر، تقليل الروتور، ورفع نسبة التوصيل فوق 80% في المغرب والخليج والعالم." : "Call center confirmation protocols, courier SLA control, and RTO reduction across GCC and MENA.",
       path: "/cash-on-delivery/",
       icon: Banknote,
-      badge: "Operations & Logistics"
+      badge: isRtl ? "العمليات واللوجستيك" : "Operations & Logistics"
     },
     {
       title: isRtl ? "تحسين معدل التحويل (Conversion CRO)" : "Conversion Rate Optimization (CRO) & Funnels",
       desc: isRtl ? "تصميم صفحات هبوط عالية التحويل، تقليل احتكاك الشراء على الموبايل، ومضاعفة الـ AOV." : "High-converting mobile product pages, single-page checkouts, and AOV expansion funnels.",
       path: "/conversion-optimization/",
       icon: Zap,
-      badge: "Store Performance"
+      badge: isRtl ? "الأداء والتحويل" : "Store Performance"
     },
     {
       title: isRtl ? "حاسبات وأدوات اتخاذ القرار (Financial Tools)" : "Financial Decision Tools & Calculators",
       desc: isRtl ? "حاسبة Break-Even ROAS، محاكي صافي الهامش، ونماذج تقدير خسائر الإرجاع." : "Calculators for Break-Even ROAS, Net Contribution Margins, and COD delivery thresholds.",
       path: "/tools/",
       icon: Calculator,
-      badge: "Interactive Utilities"
+      badge: isRtl ? "أدوات وحاسبات" : "Interactive Utilities"
     }
   ];
 
@@ -94,7 +94,7 @@ export const HomePage: React.FC<HomePageProps> = ({
         <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Topical Authority Clusters</span>
+            <span>{isRtl ? "المحاور المعرفية الكبرى" : "Topical Authority Clusters"}</span>
           </span>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white">
             {isRtl ? "المحاور المعرفية والعملية الكبرى للتجارة الإلكترونية" : "Core E-Commerce & Dropshipping Knowledge Pillars"}
