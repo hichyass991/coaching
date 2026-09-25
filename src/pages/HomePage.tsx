@@ -19,6 +19,7 @@ import {
 import { Hero } from '../components/Hero';
 import { PainPointsSection } from '../components/PainPointsSection';
 import { CoachingProgramSection } from '../components/CoachingProgramSection';
+import { TestimonialsSection } from '../components/TestimonialsSection';
 
 interface HomePageProps {
   currentLang: Language;
@@ -149,6 +150,9 @@ export const HomePage: React.FC<HomePageProps> = ({
 
       {/* Coaching & Advisory Curriculum Section */}
       <CoachingProgramSection t={t} onOpenBooking={onOpenBooking} currentLang={currentLang} />
+
+      {/* Verified Client Success Stories & Testimonials */}
+      <TestimonialsSection currentLang={currentLang} onOpenBooking={onOpenBooking} />
 
       {/* Bottom Advisory Banner */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">

@@ -21,7 +21,7 @@ export const SeoHead: React.FC<SeoHeadProps> = ({
   breadcrumbs,
   schemaType = 'WebPage',
 }) => {
-  const fullTitle = title.includes('Hicham Idali')
+  const fullTitle = title.includes('AirNest')
     ? title
     : `${title} | ${SITE_CONFIG.shortName}`;
 

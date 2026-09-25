@@ -42,8 +42,8 @@ export const Hero: React.FC<HeroProps> = ({
 
   const handleOpenWhatsApp = () => {
     const defaultMsg = currentLang === 'en'
-      ? 'Hello Hicham, I saw your coaching program and would like to ask about available 1-on-1 mentorship seats this month. Thank you!'
-      : 'سلام خويا هشام، شفت برنامج المواكبة وبغيت نستفسر على المقاعد المتبقية لهاد الشهر لحجز مكالمة استكشافية. شكراً!';
+      ? 'Hello AirNest, I saw your coaching program and would like to ask about available 1-on-1 mentorship seats this month. Thank you!'
+      : 'سلام فريق AirNest، شفت برنامج المواكبة وبغيت نستفسر على المقاعد المتبقية لهاد الشهر لحجز مكالمة استكشافية. شكراً!';
     window.open(`https://wa.me/212655845060?text=${encodeURIComponent(defaultMsg)}`, '_blank');
   };
 
@@ -159,12 +159,19 @@ export const Hero: React.FC<HeroProps> = ({
 
           {/* Social Trust Rating */}
           <div className="pt-3 border-t border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-center gap-4 text-xs text-slate-600 dark:text-slate-400">
-            <div className="flex items-center gap-1 text-amber-500">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-4 h-4 fill-amber-500 text-amber-500" />
-              ))}
-            </div>
-            <span className="font-bold text-slate-800 dark:text-slate-200">{t.hero.ratingText}</span>
+            <a 
+              href="#testimonials"
+              className="inline-flex items-center gap-2 hover:text-amber-600 dark:hover:text-amber-400 transition-colors group cursor-pointer"
+            >
+              <div className="flex items-center gap-1 text-amber-500">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-amber-500 text-amber-500" />
+                ))}
+              </div>
+              <span className="font-bold text-slate-800 dark:text-slate-200 group-hover:underline underline-offset-4 decoration-amber-500/50">
+                {t.hero.ratingText}
+              </span>
+            </a>
           </div>
 
         </div>

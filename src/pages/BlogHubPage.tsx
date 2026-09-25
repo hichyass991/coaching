@@ -6,13 +6,49 @@ import {
   Newspaper, 
   Clock, 
   ArrowRight, 
-  Sparkles, 
-  Tag, 
-  Layers 
+  ArrowLeft,
+  Tag 
 } from 'lucide-react';
+import { Language } from '../types';
 
-export const BlogHubPage: React.FC = () => {
-  const articles = [
+interface BlogHubPageProps {
+  currentLang?: Language;
+}
+
+export const BlogHubPage: React.FC<BlogHubPageProps> = ({ currentLang = 'ar' }) => {
+  const isAr = currentLang !== 'en';
+  const ArrowIcon = isAr ? ArrowLeft : ArrowRight;
+
+  const articles = isAr ? [
+    {
+      title: "التحول في خوارزميات شراء الإعلانات: لماذا يتفوق تنوع الفيديوهات الإبداعية على المزايدة اليدوية؟",
+      category: "الإعلانات الممولة",
+      readTime: "7 دقائق قراءة",
+      summary: "كيف جعلت خوارزميات التعلم الآلي الحديثة على تيك توك وميتا الاستهداف المجهري قديماً وغير فعال لصالح تنوع الخطافات الإعلانية والاستهداف العريض.",
+      link: "/paid-media/"
+    },
+    {
+      title: "اقتصاديات وحدة الدفع عند الاستلام (COD): لماذا يقل صافي الربح أحياناً عند الانتقال من 50 إلى 300 طلب/يوم؟",
+      category: "الدفع عند الاستلام",
+      readTime: "9 دقائق قراءة",
+      summary: "تحليل رياضي لاختناقات المستودعات، قفزات نسبة الروتور، وفخ تجميد رأس المال التشغيلي أثناء التوسع الإقليمي السريع بدون ضبط اللوجستيك.",
+      link: "/cash-on-delivery/"
+    },
+    {
+      title: "من موقع 1688 إلى مستودعات 3PL المحلية: خارطة الطريق الكاملة لسلاسل إمداد الدروب شيبينغ الناجح",
+      category: "الدروب شيبينغ",
+      readTime: "11 دقيقة قراءة",
+      summary: "الانتقال اللوجستي المنظم من الشحن الجوي الفردي عبر الحدود إلى شحن الحاويات المجمعة بحراً والتخزين المحلي لتقليص مدة التوصيل.",
+      link: "/dropshipping/"
+    },
+    {
+      title: "فورم الدفع السريع بدون احتكاك: دروس مستفادة من تدقيق أكثر من 100 متجر إلكتروني",
+      category: "تحسين التحويل",
+      readTime: "6 دقائق قراءة",
+      summary: "تحليل أنماط التخطيط البصري، تموضع أزرار الشراء، ومحفزات بناء الثقة التي ترفع معدل إتمام الطلبات على الهاتف بشكل قياسي.",
+      link: "/conversion-optimization/"
+    }
+  ] : [
     {
       title: "The Shift in Algorithmic Ad Buying: Why Creative Breadth Beats Manual Bidding in 2026",
       category: "Paid Media",
@@ -46,26 +82,30 @@ export const BlogHubPage: React.FC = () => {
   return (
     <div className="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 min-h-screen">
       <SeoHead
-        title="E-Commerce & Dropshipping Insights, Market Analysis & Research"
-        description="Data-backed industry analysis, platform algorithm updates, and operational teardowns for modern e-commerce and dropshipping operators."
+        title={isAr ? "تحليلات التجارة الإلكترونية، تحديثات الخوارزميات والبحوث | AirNest" : "E-Commerce & Dropshipping Insights, Market Analysis & Research | AirNest"}
+        description={isAr ? "تحليلات سوقية مبنية على البيانات، تحديثات خوارزميات المنصات الإعلانية، وتشريح ميداني لأصحاب المتاجر الإلكترونية والدروب شيبينغ." : "Data-backed industry analysis, platform algorithm updates, and operational teardowns for modern e-commerce and dropshipping operators."}
         canonicalPath="/blog/"
-        breadcrumbs={[{ name: 'Blog', item: '/blog/' }]}
+        breadcrumbs={[{ name: isAr ? 'المدونة والتحليلات' : 'Blog', item: '/blog/' }]}
       />
 
-      <Breadcrumbs items={[{ name: 'Blog', item: '/blog/' }]} />
+      <Breadcrumbs items={[{ name: isAr ? 'المدونة والتحليلات' : 'Blog', item: '/blog/' }]} currentLang={currentLang} />
 
       {/* Hero Header */}
       <header className="border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 mb-4">
             <Newspaper className="w-3.5 h-3.5" />
-            <span>Research & Industry Analysis</span>
+            <span>{isAr ? "أبحاث وتحليلات السوق الميدانية" : "Research & Industry Analysis"}</span>
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6 leading-tight">
-            E-Commerce & Dropshipping Insights, Market Analysis & Research
+            {isAr 
+              ? "تحليلات التجارة الإلكترونية والدروب شيبينغ وبحوث السوق" 
+              : "E-Commerce & Dropshipping Insights, Market Analysis & Research"}
           </h1>
           <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl">
-            In-depth operational analyses, algorithm shifts, and empirical case breakdowns from the front lines of global e-commerce and media buying.
+            {isAr
+              ? "تحليلات تشغيلية متعمقة، ومتابعة فورية لتغيرات الخوارزميات، ودراسات حالة واقعية من الخطوط الأمامية للتجارة الإلكترونية وشراء الإعلانات."
+              : "In-depth operational analyses, algorithm shifts, and empirical case breakdowns from the front lines of global e-commerce and media buying."}
           </p>
         </div>
       </header>
@@ -105,8 +145,8 @@ export const BlogHubPage: React.FC = () => {
                   to={article.link} 
                   className="text-xs font-bold text-slate-900 dark:text-white group-hover:text-amber-500 transition-colors inline-flex items-center gap-1.5"
                 >
-                  <span>Read Full Pillar Analysis</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  <span>{isAr ? "قراءة التحليل الكامل" : "Read Full Pillar Analysis"}</span>
+                  <ArrowIcon className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </article>

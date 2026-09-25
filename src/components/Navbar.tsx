@@ -14,9 +14,7 @@ import {
   BookOpen,
   Calculator,
   User,
-  Briefcase,
-  ExternalLink,
-  Laptop
+  Briefcase
 } from 'lucide-react';
 import { SITE_CONFIG } from '../config/site';
 
@@ -101,7 +99,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             title={SITE_CONFIG.name}
           >
             <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-600 via-amber-500 to-orange-400 text-slate-950 flex items-center justify-center font-black text-lg shadow-md shadow-amber-500/20 group-hover:scale-105 transition-transform">
-              HI
+              AN
             </div>
             <div className="flex flex-col text-start">
               <span className="font-extrabold text-base text-slate-900 dark:text-white tracking-tight leading-tight">
@@ -235,19 +233,6 @@ export const Navbar: React.FC<NavbarProps> = ({
               )}
             </button>
 
-            {/* Coaching Platform Button */}
-            <a
-              href={SITE_CONFIG.platformUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="h-9 px-3 rounded-lg border border-amber-500/40 bg-amber-500/10 hover:bg-amber-500/20 text-slate-900 dark:text-amber-300 font-bold text-xs transition-all flex items-center gap-1.5 shadow-2xs hover:scale-[1.02] active:scale-[0.98]"
-              title={isRtl ? "منصة الكوتشينغ AirNest" : "AirNest Coaching Platform"}
-            >
-              <Laptop className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400 shrink-0" />
-              <span>{t.nav.platform}</span>
-              <ExternalLink className="w-3 h-3 opacity-60 shrink-0" />
-            </a>
-
             {/* Primary Action Button */}
             <button
               onClick={onOpenBooking}
@@ -292,7 +277,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div className="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
             <span className="text-xs font-bold text-slate-600 dark:text-slate-300 flex items-center gap-1.5">
               <Globe className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400" />
-              <span>Language:</span>
+              <span>{isRtl ? "اللغة:" : "Language:"}</span>
             </span>
 
             <div className="flex gap-1">
@@ -352,18 +337,6 @@ export const Navbar: React.FC<NavbarProps> = ({
               </Link>
             </div>
           </div>
-
-          {/* Mobile Platform CTA */}
-          <a
-            href={SITE_CONFIG.platformUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full py-3 px-4 rounded-xl border border-amber-500/30 bg-amber-500/10 dark:bg-amber-500/15 hover:bg-amber-500/20 text-slate-900 dark:text-amber-200 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all shadow-xs"
-          >
-            <Laptop className="w-4 h-4 text-amber-600 dark:text-amber-400" />
-            <span>{isRtl ? "دخول منصة الكوتشينغ (AirNest)" : "AirNest Coaching Platform"}</span>
-            <ExternalLink className="w-3.5 h-3.5 opacity-70" />
-          </a>
 
           {/* Mobile CTA */}
           <button

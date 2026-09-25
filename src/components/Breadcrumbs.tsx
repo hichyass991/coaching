@@ -1,13 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight, Home } from 'lucide-react';
+import { ChevronRight, ChevronLeft, Home } from 'lucide-react';
 import { BreadcrumbItem } from './SeoHead';
+import { Language } from '../types';
 
 interface BreadcrumbsProps {
   items: BreadcrumbItem[];
+  currentLang?: Language;
 }
 
-export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
+export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, currentLang = 'ar' }) => {
+  const isRtl = currentLang !== 'en';
+  const ChevronIcon = isRtl ? ChevronLeft : ChevronRight;
+
   return (
     <nav 
       aria-label="Breadcrumb" 
@@ -20,7 +25,7 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
             className="inline-flex items-center gap-1 text-slate-600 dark:text-slate-400 hover:text-amber-600 dark:hover:text-amber-400 font-medium transition-colors"
           >
             <Home className="w-3.5 h-3.5" />
-            <span>Home</span>
+            <span>{isRtl ? 'الرئيسية' : 'Home'}</span>
           </Link>
         </li>
 
@@ -28,7 +33,7 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
           const isLast = index === items.length - 1;
           return (
             <li key={item.item} className="inline-flex items-center gap-1.5">
-              <ChevronRight className="w-3.5 h-3.5 text-slate-400 dark:text-slate-600 shrink-0" />
+              <ChevronIcon className="w-3.5 h-3.5 text-slate-400 dark:text-slate-600 shrink-0" />
               {isLast ? (
                 <span 
                   aria-current="page" 

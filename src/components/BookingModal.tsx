@@ -37,7 +37,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
   const generateWhatsAppMessage = () => {
     if (currentLang === 'en') {
-      return `Hello Hicham, I would like to book my 1-on-1 strategy call for my e-commerce business:
+      return `Hello AirNest, I would like to book my 1-on-1 strategy call for my e-commerce business:
 
 👤 Name: ${formData.name.trim() || 'Founder'}
 📱 WhatsApp Phone: ${formData.phone.trim() || 'Not specified'}
@@ -46,7 +46,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 What are your available time slots for our call? Thank you!`;
     }
 
-    return `سلام خويا هشام، بغيت نحجز المكالمة الاستكشافية لبرنامج المواكبة (1-on-1 Mentorship):
+    return `سلام فريق AirNest، بغيت نحجز المكالمة الاستكشافية لبرنامج المواكبة (1-on-1 Mentorship):
 
 👤 الاسم الكامل: ${formData.name.trim() || 'صاحب متجر'}
 📱 رقم الواتساب: ${formData.phone.trim() || 'غير محدد'}

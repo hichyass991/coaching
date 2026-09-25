@@ -12,11 +12,14 @@
   }
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 ::-webkit-scrollbar-track {
   background: #f8fafc;
 }

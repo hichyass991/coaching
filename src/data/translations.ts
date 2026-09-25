@@ -3,8 +3,8 @@ import { Language, SiteTranslation } from '../types';
 export const TRANSLATIONS: Record<Language, SiteTranslation> = {
   ar: {
     nav: {
-      brandName: 'هشام إدعلي',
-      brandRole: 'خبير ومستشار تجارة إلكترونية',
+      brandName: 'AirNest',
+      brandRole: 'منصة واستشارات التجارة الإلكترونية',
       home: 'الرئيسية',
       painPoints: 'المشاكل الشائعة',
       program: 'برنامج المواكبة',
@@ -167,8 +167,8 @@ export const TRANSLATIONS: Record<Language, SiteTranslation> = {
 
   en: {
     nav: {
-      brandName: 'Hicham Idali',
-      brandRole: 'E-Commerce Coach & Growth Consultant',
+      brandName: 'AirNest',
+      brandRole: 'E-Commerce Growth & Operations Platform',
       home: 'Home',
       painPoints: 'Common Challenges',
       program: 'Coaching Program',

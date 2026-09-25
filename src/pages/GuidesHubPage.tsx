@@ -5,14 +5,71 @@ import { Breadcrumbs } from '../components/Breadcrumbs';
 import { 
   BookOpen, 
   ArrowRight, 
-  FileText, 
-  CheckCircle2, 
-  Layers, 
-  Sparkles 
+  ArrowLeft,
+  FileText 
 } from 'lucide-react';
+import { Language } from '../types';
 
-export const GuidesHubPage: React.FC = () => {
-  const guideCategories = [
+interface GuidesHubPageProps {
+  currentLang?: Language;
+}
+
+export const GuidesHubPage: React.FC<GuidesHubPageProps> = ({ currentLang = 'ar' }) => {
+  const isAr = currentLang !== 'en';
+  const ArrowIcon = isAr ? ArrowLeft : ArrowRight;
+
+  const guideCategories = isAr ? [
+    {
+      title: "الأسس ونماذج الأعمال في التجارة الإلكترونية",
+      description: "الهيكلية العامة للمشاريع، اختيار المنصة المناسبة، وبناء النماذج المالية الدقيقة.",
+      pillarLink: "/ecommerce/",
+      pillarName: "ركيزة التجارة الإلكترونية",
+      guides: [
+        { title: "مقارنة D2C مقابل الدروب شيبينغ والعلامة التجارية الخاصة: استراتيجيات التوريد", path: "/ecommerce/" },
+        { title: "دليل هامش المساهمة الحقيقي: كيفية حساب الأرباح الصافية بدقة", path: "/ecommerce/" },
+      ]
+    },
+    {
+      title: "فحص واختيار المنتجات والتوريد",
+      description: "معايير العثور على المنتجات ذات الهامش الربحي المرتفع والتعاقد مع وكلاء موثوقين.",
+      pillarLink: "/dropshipping/",
+      pillarName: "ركيزة الدروب شيبينغ والتوريد",
+      guides: [
+        { title: "مصفوفة فحص المنتجات ذات الـ 5 معايير: اختيار المنتجات بناءً على الأرقام", path: "/dropshipping/" },
+        { title: "العمل مع وكلاء التوريد الخاصين (Private Agents) ومصانع 1688 الصينية", path: "/dropshipping/" },
+      ]
+    },
+    {
+      title: "الإعلانات الممولة والاستحواذ على العملاء",
+      description: "توسيع الحملات الإعلانية ومضاعفة المبيعات عبر إعلانات ميتا وتيك توك سبارك ادز.",
+      pillarLink: "/paid-media/",
+      pillarName: "ركيزة الإعلانات الممولة",
+      guides: [
+        { title: "هندسة خطاف الـ 3 ثوانٍ: كيفية إيقاف التمرير في إعلانات تيك توك", path: "/paid-media/" },
+        { title: "الاستهداف العريض وتوسيع حملات CBO على فيسبوك وإنستغرام", path: "/paid-media/" },
+      ]
+    },
+    {
+      title: "لوجستيك الدفع عند الاستلام (COD)",
+      description: "إدارة مراكز التأكيد الهاتفي، شروط شركات الشحن، ورفع نسبة التوصيل فوق 80%.",
+      pillarLink: "/cash-on-delivery/",
+      pillarName: "ركيزة عمليات الدفع عند الاستلام",
+      guides: [
+        { title: "سكريبتات مراكز الاتصال وبروتوكولات تصفية الطلبات الوهمية", path: "/cash-on-delivery/" },
+        { title: "إدارة الطرود المتعثرة (NDR): إنقاذ الشحنات وحماية السيولة النقدية", path: "/cash-on-delivery/" },
+      ]
+    },
+    {
+      title: "تحسين معدل التحويل (CRO) ومسارات البيع",
+      description: "زيادة العائد لكل زائر عبر صفحات هبوط سريعة وباقات مضاعفة قيمة السلة.",
+      pillarLink: "/conversion-optimization/",
+      pillarName: "ركيزة تحسين نسبة التحويل",
+      guides: [
+        { title: "قائمة فحص أعلى الصفحة (Above-the-Fold) لمتاجر الهواتف الذكية", path: "/conversion-optimization/" },
+        { title: "باقات الكميات المتدرجة وعروض ما بعد الشراء: رفع متوسط الطلب بنسبة 35%", path: "/conversion-optimization/" },
+      ]
+    }
+  ] : [
     {
       title: "Foundations & Business Models",
       description: "Macro-level business architecture, store tech stack selection, and financial modeling.",
@@ -68,26 +125,30 @@ export const GuidesHubPage: React.FC = () => {
   return (
     <div className="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 min-h-screen">
       <SeoHead
-        title="E-Commerce Guides & Standard Operating Procedures (SOPs)"
-        description="Comprehensive repository of actionable operational guides for e-commerce and dropshipping operators: media buying, product validation, COD operations, and funnel optimization."
+        title={isAr ? "أدلة وإجراءات التشغيل القياسية للتجارة الإلكترونية (SOPs) | AirNest" : "E-Commerce Guides & Standard Operating Procedures (SOPs) | AirNest"}
+        description={isAr ? "مكتبة الأدلة التشغيلية الشاملة لأصحاب المتاجر: شراء الترافيك، فحص المنتجات، عمليات الدفع عند الاستلام، ومضاعفة نسبة التحويل." : "Comprehensive repository of actionable operational guides for e-commerce and dropshipping operators: media buying, product validation, COD operations, and funnel optimization."}
         canonicalPath="/guides/"
-        breadcrumbs={[{ name: 'Guides', item: '/guides/' }]}
+        breadcrumbs={[{ name: isAr ? 'الأدلة والمعايير' : 'Guides', item: '/guides/' }]}
       />
 
-      <Breadcrumbs items={[{ name: 'Guides', item: '/guides/' }]} />
+      <Breadcrumbs items={[{ name: isAr ? 'الأدلة والمعايير' : 'Guides', item: '/guides/' }]} currentLang={currentLang} />
 
       {/* Hero Header */}
       <header className="border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 mb-4">
             <BookOpen className="w-3.5 h-3.5" />
-            <span>Knowledge Base & Documentation</span>
+            <span>{isAr ? "قاعدة المعرفة والإجراءات القياسية" : "Knowledge Base & Documentation"}</span>
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6 leading-tight">
-            E-Commerce Guides & Standard Operating Procedures (SOPs)
+            {isAr 
+              ? "أدلة التجارة الإلكترونية وإجراءات التشغيل القياسية (SOPs)" 
+              : "E-Commerce Guides & Standard Operating Procedures (SOPs)"}
           </h1>
           <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl">
-            Actionable step-by-step manuals written from active operational experience. No fluff or generic theory—just verified operating procedures for building scalable e-commerce businesses.
+            {isAr
+              ? "كتيبات عملية خطوة بخطوة مكتوبة من واقع الخبرة التشغيلية الميدانية. بدون حشو أو نظريات مكررة — فقط إجراءات عمل مؤكدة لبناء وتوسيع مشاريع تجارة إلكترونية رابحة ومستدامة."
+              : "Actionable step-by-step manuals written from active operational experience. No fluff or generic theory—just verified operating procedures for building scalable e-commerce businesses."}
           </p>
         </div>
       </header>
@@ -110,7 +171,7 @@ export const GuidesHubPage: React.FC = () => {
                 className="text-xs font-bold text-amber-600 dark:text-amber-400 inline-flex items-center gap-1 hover:underline shrink-0"
               >
                 <span>{category.pillarName}</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowIcon className="w-3.5 h-3.5" />
               </Link>
             </div>
 
@@ -127,7 +188,7 @@ export const GuidesHubPage: React.FC = () => {
                       {guide.title}
                     </h3>
                     <span className="text-[11px] text-slate-400 dark:text-slate-500 mt-1 block">
-                      Read In-Depth Framework →
+                      {isAr ? "قراءة الدليل الشامل ←" : "Read In-Depth Framework →"}
                     </span>
                   </div>
                 </Link>

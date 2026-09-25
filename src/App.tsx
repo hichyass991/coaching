@@ -107,43 +107,43 @@ export default function App() {
               path="/" 
               element={<HomePage currentLang={currentLang} t={t} onOpenBooking={handleOpenBooking} />} 
             />
-            <Route path="/ecommerce" element={<EcommercePillarPage />} />
-            <Route path="/ecommerce/" element={<EcommercePillarPage />} />
+            <Route path="/ecommerce" element={<EcommercePillarPage currentLang={currentLang} />} />
+            <Route path="/ecommerce/" element={<EcommercePillarPage currentLang={currentLang} />} />
 
-            <Route path="/dropshipping" element={<DropshippingPillarPage />} />
-            <Route path="/dropshipping/" element={<DropshippingPillarPage />} />
+            <Route path="/dropshipping" element={<DropshippingPillarPage currentLang={currentLang} />} />
+            <Route path="/dropshipping/" element={<DropshippingPillarPage currentLang={currentLang} />} />
 
-            <Route path="/paid-media" element={<PaidMediaPillarPage />} />
-            <Route path="/paid-media/" element={<PaidMediaPillarPage />} />
+            <Route path="/paid-media" element={<PaidMediaPillarPage currentLang={currentLang} />} />
+            <Route path="/paid-media/" element={<PaidMediaPillarPage currentLang={currentLang} />} />
 
-            <Route path="/cash-on-delivery" element={<CashOnDeliveryPillarPage />} />
-            <Route path="/cash-on-delivery/" element={<CashOnDeliveryPillarPage />} />
+            <Route path="/cash-on-delivery" element={<CashOnDeliveryPillarPage currentLang={currentLang} />} />
+            <Route path="/cash-on-delivery/" element={<CashOnDeliveryPillarPage currentLang={currentLang} />} />
 
-            <Route path="/conversion-optimization" element={<ConversionOptimizationPillarPage />} />
-            <Route path="/conversion-optimization/" element={<ConversionOptimizationPillarPage />} />
+            <Route path="/conversion-optimization" element={<ConversionOptimizationPillarPage currentLang={currentLang} />} />
+            <Route path="/conversion-optimization/" element={<ConversionOptimizationPillarPage currentLang={currentLang} />} />
 
-            <Route path="/tools" element={<ToolsHubPage />} />
-            <Route path="/tools/" element={<ToolsHubPage />} />
+            <Route path="/tools" element={<ToolsHubPage currentLang={currentLang} />} />
+            <Route path="/tools/" element={<ToolsHubPage currentLang={currentLang} />} />
 
-            <Route path="/guides" element={<GuidesHubPage />} />
-            <Route path="/guides/" element={<GuidesHubPage />} />
+            <Route path="/guides" element={<GuidesHubPage currentLang={currentLang} />} />
+            <Route path="/guides/" element={<GuidesHubPage currentLang={currentLang} />} />
 
-            <Route path="/blog" element={<BlogHubPage />} />
-            <Route path="/blog/" element={<BlogHubPage />} />
+            <Route path="/blog" element={<BlogHubPage currentLang={currentLang} />} />
+            <Route path="/blog/" element={<BlogHubPage currentLang={currentLang} />} />
 
             <Route 
               path="/consulting" 
-              element={<ConsultingPage onOpenBooking={handleOpenBooking} />} 
+              element={<ConsultingPage currentLang={currentLang} onOpenBooking={handleOpenBooking} />} 
             />
             <Route 
               path="/consulting/" 
-              element={<ConsultingPage onOpenBooking={handleOpenBooking} />} 
+              element={<ConsultingPage currentLang={currentLang} onOpenBooking={handleOpenBooking} />} 
             />
 
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/about/" element={<AboutPage />} />
+            <Route path="/about" element={<AboutPage currentLang={currentLang} />} />
+            <Route path="/about/" element={<AboutPage currentLang={currentLang} />} />
 
-            <Route path="*" element={<NotFoundPage />} />
+            <Route path="*" element={<NotFoundPage currentLang={currentLang} />} />
           </Routes>
         </main>
 

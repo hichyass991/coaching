@@ -6,23 +6,23 @@ export interface NavItem {
 }
 
 export const SITE_CONFIG = {
-  name: "Hicham Idali | Global E-Commerce & Dropshipping Growth Authority",
-  shortName: "Hicham Idali",
-  siteUrl: ((import.meta as any).env?.VITE_SITE_URL as string) || "https://www.hichamidali.com",
-  defaultTitle: "E-Commerce & Dropshipping Growth Authority | Hicham Idali",
-  titleTemplate: "%s | Hicham Idali",
+  name: "AirNest | Global E-Commerce & Dropshipping Growth Authority",
+  shortName: "AirNest",
+  siteUrl: ((import.meta as any).env?.VITE_SITE_URL as string) || "https://airnest.online",
+  defaultTitle: "E-Commerce & Dropshipping Growth Authority | AirNest",
+  titleTemplate: "%s | AirNest",
   defaultDescription:
     "Actionable frameworks for scaling global e-commerce, dropshipping, performance paid ads (TikTok & Meta), cash on delivery (COD) operations, and conversion optimization.",
   author: {
-    name: "Hicham Idali",
-    role: "E-Commerce Consultant & Operations Specialist",
-    email: "contact@hichamidali.com",
+    name: "AirNest",
+    role: "E-Commerce Consulting & Operations Ecosystem",
+    email: "hivhamidali07@gmail.com",
     telephone: "+212655845060",
     location: "Casablanca, Morocco",
   },
   socials: {
     whatsapp: "https://wa.me/212655845060",
-    linkedin: "https://www.linkedin.com/in/hicham-idali",
+    linkedin: "https://www.linkedin.com/company/airnest",
   },
   platformUrl: "https://backend.airnest.online/",
   primaryNav: [

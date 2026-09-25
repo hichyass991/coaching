@@ -18,8 +18,8 @@ export const StickyBottomBar: React.FC<StickyBottomBarProps> = ({
 
   const handleOpenWhatsApp = () => {
     const waText = currentLang === 'en'
-      ? 'Hello Hicham, I saw your coaching offer and would like to ask about available 1-on-1 mentorship seats this month. Thank you!'
-      : 'سلام خويا هشام، شفت العرض ديالك وبغيت نستفسر على برنامج المواكبة الفردية فالتجارة الإلكترونية (1-on-1 Coaching). عافاك واش باقي شي مقعد متوفر هاد الشهر؟ شكراً! 💬';
+      ? 'Hello AirNest, I saw your coaching offer and would like to ask about available 1-on-1 mentorship seats this month. Thank you!'
+      : 'سلام فريق AirNest، شفت العرض ديالكم وبغيت نستفسر على برنامج المواكبة الفردية فالتجارة الإلكترونية (1-on-1 Coaching). عافاك واش باقي شي مقعد متوفر هاد الشهر؟ شكراً! 💬';
     window.open(`https://wa.me/212655845060?text=${encodeURIComponent(waText)}`, '_blank');
   };
 

@@ -19,8 +19,8 @@ export const Footer: React.FC<FooterProps> = ({
 
   const handleOpenWhatsApp = () => {
     const waText = currentLang === 'en'
-      ? 'Hello Hicham, I would like to inquire about your e-commerce advisory and consulting services. Thank you!'
-      : 'سلام خويا هشام، بغيت نستفسر على خدمات المواكبة فالتجارة الإلكترونية. شكراً!';
+      ? 'Hello AirNest, I would like to inquire about your e-commerce advisory and consulting services. Thank you!'
+      : 'سلام فريق AirNest، بغيت نستفسر على خدمات المواكبة فالتجارة الإلكترونية. شكراً!';
     window.open(`https://wa.me/212655845060?text=${encodeURIComponent(waText)}`, '_blank');
   };
 
@@ -34,14 +34,14 @@ export const Footer: React.FC<FooterProps> = ({
           <div className="md:col-span-2 space-y-4">
             <Link to="/" className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-600 via-amber-500 to-orange-400 text-slate-950 flex items-center justify-center font-black text-lg shadow-sm">
-                HI
+                AN
               </div>
               <div className="flex flex-col">
                 <span className="font-extrabold text-base text-slate-900 dark:text-white leading-tight">
                   {t.nav.brandName}
                 </span>
                 <span className="text-[11px] font-semibold text-amber-600 dark:text-amber-400">
-                  Global E-Commerce & Dropshipping Authority
+                  {isRtl ? "مرجع ريادة التجارة الإلكترونية والدروب شيبينغ" : "Global E-Commerce & Dropshipping Authority"}
                 </span>
               </div>
             </Link>
@@ -114,18 +114,6 @@ export const Footer: React.FC<FooterProps> = ({
                 </Link>
               </li>
               <li>
-                <a
-                  href={SITE_CONFIG.platformUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-amber-600 dark:text-amber-400 font-bold hover:underline"
-                >
-                  <Laptop className="w-3.5 h-3.5" />
-                  <span>{isRtl ? "منصة الكوتشينغ (AirNest)" : "AirNest Coaching Platform"}</span>
-                  <ExternalLink className="w-3 h-3 opacity-75" />
-                </a>
-              </li>
-              <li>
                 <Link to="/consulting/" className="text-amber-600 dark:text-amber-400 font-bold hover:underline">
                   {isRtl ? "استشارات فردية 1-on-1" : "1-on-1 Advisory Services"}
                 </Link>
@@ -164,11 +152,11 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <a
-                  href="mailto:contact@hichamidali.com"
+                  href={`mailto:${SITE_CONFIG.author.email}`}
                   className="inline-flex items-center gap-2 text-slate-700 dark:text-slate-300 hover:text-amber-600 dark:hover:text-amber-400 font-bold transition-colors"
                 >
                   <Mail className="w-4 h-4 text-amber-600 dark:text-amber-400" />
-                  <span>contact@hichamidali.com</span>
+                  <span>{SITE_CONFIG.author.email}</span>
                 </a>
               </li>
               <li className="text-slate-500 dark:text-slate-400 pt-1 leading-relaxed">
